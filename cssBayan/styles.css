@@ -1,0 +1,86 @@
+
+
+.accordion {
+    max-width: 500px;
+    margin:20px auto;
+    
+}
+.accordion .arrow_icon {
+    position: absolute;
+    display: none;
+}
+.accordion:hover .arrow_icon {
+    display: block;
+}
+
+.accordion_title {
+    display: block;
+    color: black;
+    cursor: pointer;
+
+}
+.accordion_input 
+{
+position: absolute;
+width: 0;
+height: 0;
+}
+.accordion_title
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:10px;
+    position: relative;
+    font-size: 20px;
+    border-top: 1px #000;
+    border-bottom: 1px #000;
+    overflow: hidden;
+  
+}
+.arrow_icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%) rotate(0deg);
+    width: 20px;
+    height: 20px;
+    content: url('assets/css/arrow-up.png');
+   
+  }
+  
+  .accordion_title:hover .arrow_icon {
+    content: url('assets/css/arrow-down.png')
+  }
+    
+  
+  .accordion_element {
+    overflow:hidden;
+    border-top: 1px solid #000;
+  }
+  .accordion_element .first_meme {
+    position: absolute;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    height: 262px;
+    width: 376px;
+}
+
+.accordion_element:hover .first_meme {
+    display: block;
+    opacity: 1;
+}
+
+.accordion_element .second_meme {
+    position: absolute;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    height: 262px;
+    width: 376px;
+}
+.accordion_element:hover .second_meme {
+    display: block;
+    opacity: 1;
+}
