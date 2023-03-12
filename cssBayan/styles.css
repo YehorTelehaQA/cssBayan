@@ -2,7 +2,7 @@
 
 .accordion {
     max-width: 500px;
-    margin:20px auto;
+    margin:0 auto;
     
 }
 .accordion .arrow_icon {
@@ -19,16 +19,11 @@
     cursor: pointer;
 
 }
-.accordion_input 
-{
-position: absolute;
-width: 0;
-height: 0;
-}
+
 .accordion_title
 {
     display: flex;
-    justify-content: space-between;
+
     align-items: center;
     padding:10px;
     position: relative;
@@ -57,30 +52,35 @@ height: 0;
   .accordion_element {
     overflow:hidden;
     border-top: 1px solid #000;
+    transition: transform 0.3s ease;
+    z-index: 1;
   }
-  .accordion_element .first_meme {
-    position: absolute;
+  
+  .accordion_element [class$="meme"]{
+    position: relative;
     display: none;
     opacity: 0;
     transition: opacity 0.3s ease;
     height: 262px;
     width: 376px;
+    margin-bottom: 50px;
+    z-index: 2;
+}
+.accordion_element:hover ~ .next_element {
+    margin-top: 50px;
 }
 
-.accordion_element:hover .first_meme {
+.accordion_element:hover [class$="meme"] {
     display: block;
     opacity: 1;
 }
-
-.accordion_element .second_meme {
-    position: absolute;
+.accordion_input
+{
     display: none;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    height: 262px;
-    width: 376px;
+
 }
-.accordion_element:hover .second_meme {
+.accordion_input:checked ~ [class$="meme"]  {
     display: block;
     opacity: 1;
+    z-index: 2;
 }
